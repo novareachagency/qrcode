@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Code Generator</title>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <a href="script.js"></a>
+ 
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4V6H6V4H4ZM18 4V6H20V4H18ZM18 18V20H20V18H18ZM4 18V20H6V18H4ZM6 10H18V6H6V10ZM10 18H14V14H10V18ZM8 16H16V12H8V16Z" fill="currentColor"/>
+          <path d="M14 10V6H18V10H14ZM6 18V14H10V18H6ZM14 18V14H18V18H14Z" fill="currentColor"/>
+        </svg>
+        QR Code Generator
+      </h1>
+      <p class="subtitle">Create scannable QR codes for any text, URL, or contact info</p>
+    </header>
+
+    <main class="card">
+      <div class="input-group">
+        <label for="text-input">Enter Text or URL</label>
+        <input type="text" id="text-input" placeholder="https://example.com, phone number, or any text..." />
+      </div>
+
+      <div class="btn-group" style="margin-top: 20px;">
+        <button class="btn-primary" id="generate-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M21 15V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M17 8L12 3L7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          Generate QR Code
+        </button>
+      </div>
+
+      <div id="qr-result" class="qr-container hidden">
+        <div id="qrcode"></div>
+        
+        <div class="btn-group">
+          <button class="btn-success" id="download-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M21 15V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V15" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7 10L12 15L17 10" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              <path d="M12 15V3" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Download PNG
+          </button>
+          <button class="btn-secondary" id="clear-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M15 9L9 15M9 9L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            Clear
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Real QR Codes</h3>
+        <p>Generates actual scannable QR codes that work with any smartphone</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 15V19M12 19L16 15M12 19L8 15M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Download PNG</h3>
+        <p>Save your QR code as a high-quality PNG image for print or sharing</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2"/>
+            <path d="M20 12C20 16.4183 16.4183 20 12 20C7.58172 20 4 16.4183 4 12C4 7.58172 7.58172 4 12 4C16.4183 4 20 7.58172 20 12Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3>100% Private</h3>
+        <p>All processing happens in your browser — no data is sent to servers</p>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>
+
